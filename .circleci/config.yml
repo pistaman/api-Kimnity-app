@@ -15,7 +15,7 @@ jobs:
           DB_USERNAME: 'root'
           DB_PASSWORD: ''
 
-        - image: circleci/mysql:5.7
+      - image: circleci/mysql:5.7
 
     working_directory: ~/api
 
