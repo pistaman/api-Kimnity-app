@@ -34,9 +34,9 @@ jobs:
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
-			- run: yarn install
+      - run: yarn install
 
-			- run: mv config/darabase.yml.ci config/database.yml
+      - run: mv config/darabase.yml.ci config/database.yml
 
       - save_cache:
           paths:
