@@ -36,7 +36,7 @@ jobs:
 
       - run: yarn install
 
-      - run: mv config/darabase.yml.ci config/database.yml
+      - run: mv config/database.yml.ci config/database.yml
 
       - save_cache:
           paths:
