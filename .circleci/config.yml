@@ -36,14 +36,14 @@ jobs:
 
       - run: yarn install
 
-      - run: mv config/database.yml.ci config/database.yml
-
       - save_cache:
           paths:
             - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+					key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-      # Database setup
+      - run: mv config/database.yml.ci config/database.yml
+
+			# Database setup
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
 
