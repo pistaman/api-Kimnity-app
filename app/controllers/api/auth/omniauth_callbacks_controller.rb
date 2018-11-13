@@ -3,7 +3,6 @@ module Api
 
     class OmniauthCallbacksController < DeviseTokenAuth::OmniauthCallbacksController
 
-      # ①セッションを有効化
       skip_before_action :skip_session
 
       def redirect_callbacks
@@ -29,7 +28,6 @@ module Api
             fallback_render data[:error] || 'An error occurred'
           end
         else
-          # わかりやすい様に開発時はjsonとして結果を返す
           render json: @resource, status: :ok
         end
       end
