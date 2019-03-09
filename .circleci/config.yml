@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/ruby:2.5.1-node-browsers
+      - image: circleci/ruby:2.5.1-node
 
         environment:
           RAILS_ENV: test
@@ -42,6 +42,10 @@ jobs:
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       - run: mv config/database.yml.ci config/database.yml
+
+      - run:
+          name: rubocop
+          command: bundle exec rubocop
 
       # Database setup
       - run: bundle exec rake db:create

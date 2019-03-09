@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'faker'
 FactoryBot.define do
-
-  pass  = Faker::Internet.password(8)
+  pass = Faker::Internet.password(8)
   mail = Faker::Internet.email
 
   factory :user do
@@ -13,7 +14,7 @@ FactoryBot.define do
     provider                   { 'email' }
   end
 
-  factory :sns_user,class: User do
+  factory :sns_user, class: User do
     password                   { pass }
     password_confirmation      { pass }
     name                       { Faker::StarWars.character }

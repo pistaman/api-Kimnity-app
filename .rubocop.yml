@@ -1,0 +1,57 @@
+# inherit_from: .rubocop_todo.yml
+
+Rails:
+  Enabled: true
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+    - staging
+
+AllCops:
+  TargetRubyVersion: 2.5.1
+  TargetRailsVersion: 5.2
+
+  Exclude:
+    - 'db/**/*'
+    - 'tmp/**/*'
+    - 'spec/**/*'
+    - 'bin/**/*'
+    - 'vendor/**/*'
+
+# 不要
+AsciiComments:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+NumericLiterals:
+  Enabled: false
+
+# 将来的に必要
+LineLength:
+  Enabled: false
+
+AbcSize:
+  Enabled: false
+
+BlockLength:
+  Enabled: false
+
+ClassLength:
+  Enabled: false
+
+CyclomaticComplexity:
+  Enabled: false
+
+MethodLength:
+  Enabled: false
+
+ModuleLength:
+  Enabled: false
+
+PerceivedComplexity:
+  Enabled: false
