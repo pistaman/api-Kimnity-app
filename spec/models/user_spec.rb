@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe 'User' do
   describe 'Omniauth login' do
     context 'when it is empty of email' do
